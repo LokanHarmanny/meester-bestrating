@@ -1,3 +1,3 @@
 export default function Portfolio() {
-  return <div>Portfolio pagina</div>;
+  return <main className="">Portfolio pagina</main>;
 }
