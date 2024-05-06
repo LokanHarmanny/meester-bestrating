@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MainMenu from "@/ui/MainMenu";
-import Image from "next/image";
+import Header from "@/ui/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,15 +20,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} h-screen w-screen flex justify-center`}
       >
-        <Image
-          src={"/banner.jpg"}
-          alt={"Banner straatwerk"}
-          fill={true}
-          className="cover-object z-0 opacity-50"
-        />
-
-        <div className="flex flex-col items-center bg-slate-100 z-10 w-[75vw] mt-20 rounded opacity-80">
-          <MainMenu />
+        <div className="flex flex-col items-center">
+          <Header />
           {children}
         </div>
       </body>

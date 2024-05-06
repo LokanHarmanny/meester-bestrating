@@ -5,10 +5,7 @@ type MenuItemProps = {
 
 export default function MenuItem({ name, link }: MenuItemProps) {
   return (
-    <a
-      href={link}
-      className="cursor-pointer hover:underline font-bold text-slate-100"
-    >
+    <a href={link} className="cursor-pointer hover:underline font-bold ">
       {name}
     </a>
   );
