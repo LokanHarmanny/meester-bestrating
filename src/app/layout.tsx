@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <div className="flex flex-col relative">
-          <div className="bg-slate-200 w-screen h-[4.7rem] absolute -z-1 "></div>
+          <div className="bg-slate-200 w-screen h-[4.7rem] md:h-[9.5rem] absolute -z-1 "></div>
           <Header />
           {children}
         </div>
