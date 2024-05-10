@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div className="flex flex-col p-2">
+        <div className="flex flex-col p-3">
           <Header />
           {children}
         </div>
