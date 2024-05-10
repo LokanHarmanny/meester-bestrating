@@ -21,11 +21,11 @@ export default function Header() {
         <div className="flex flex-col w-full">
           <div className="flex flex-col md:space-x-8 space-y-2 self-end">
             <div className="flex space-x-1 items-center">
-              <PhoneIcon size="1rem" color="#000000" />
+              <PhoneIcon size="1rem" color="#D8B064" />
               <span className="text-xs">06 53 905 403</span>
             </div>
             <div className="flex space-x-1 items-center">
-              <EmailIcon size="1rem" color="#080341" />
+              <EmailIcon size="1rem" color="#D8B064" />
               <span className="text-xs">info@meesterbestrating.nl</span>
             </div>
           </div>
