@@ -9,8 +9,7 @@ export default function Header() {
   const smallScreen = window.innerWidth < 1024;
 
   return (
-    <div className="">
-      {/* <div className="bg-slate-200 w-screen h-20 absolute top-3 left-0 -z-1 "></div> */}
+    <div className="relative p-3">
       <div className="flex md:justify-center w-full md:mt-3 md:space-x-20">
         <div className="w-32 md:w-72 h-14 md:h-32 relative">
           <Image
@@ -21,7 +20,7 @@ export default function Header() {
         </div>
         <div className="flex flex-col w-full">
           <div className="flex flex-col md:space-x-8 space-y-2 self-end">
-            <div className="flex space-x-1 items-center ">
+            <div className="flex space-x-1 items-center">
               <PhoneIcon size="1rem" color="#000000" />
               <span className="text-xs">06 53 905 403</span>
             </div>
