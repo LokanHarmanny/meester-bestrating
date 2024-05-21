@@ -4,9 +4,14 @@ import Image from "next/image";
 import MainMenu from "./MainMenu";
 import PhoneIcon from "./PhoneIcon";
 import EmailIcon from "./EmailIcon";
+import { useEffect } from "react";
 
 export default function Header() {
-  const smallScreen = window.innerWidth < 1024;
+  let smallScreen = false;
+
+  useEffect(() => {
+    smallScreen = window.innerWidth < 1024;
+  }, []);
 
   return (
     <div className="relative p-3">
