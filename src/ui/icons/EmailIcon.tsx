@@ -1,6 +1,6 @@
-import { IconProps } from "./types";
+import { IconProps } from ".";
 
-export default function EmailIcon({ color, size }: IconProps) {
+export function EmailIcon({ color, size }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <path

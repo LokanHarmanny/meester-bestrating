@@ -1,6 +1,6 @@
-import { IconProps } from "./types";
+import { IconProps } from ".";
 
-export default function PhoneIcon({ color, size }: IconProps) {
+export function PhoneIcon({ color, size }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" height={size} width={size}>
       <path
