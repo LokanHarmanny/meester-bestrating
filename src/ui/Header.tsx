@@ -16,15 +16,20 @@ export default function Header() {
         </div>
         <div className="flex flex-col w-full md:w-[28rem] md:justify-between">
           <div className="flex flex-col space-y-2 self-end md:pt-2 ">
-            <div className="flex space-x-1 items-center">
+            <div className="flex space-x-2 items-center">
               <PhoneIcon size="1rem" color="#D8B064" />
-              <span className="text-xs md:text-base">06 53 905 403</span>
+              <a href="tel:+31653905403" className="text-xs md:text-base">
+                06 53 905 403
+              </a>
             </div>
-            <div className="flex space-x-1 items-center">
+            <div className="flex space-x-2 items-center">
               <EmailIcon size="1rem" color="#D8B064" />
-              <span className="text-xs md:text-base">
+              <a
+                href="mailto:info@meesterbestrating.nl"
+                className="text-xs md:text-base"
+              >
                 info@meesterbestrating.nl
-              </span>
+              </a>
             </div>
           </div>
           {!smallScreen && <MainMenu />}
