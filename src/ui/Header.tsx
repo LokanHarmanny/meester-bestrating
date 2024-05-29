@@ -1,25 +1,18 @@
-"use client";
-
 import MainMenu from "./MainMenu";
 import { useEffect } from "react";
 import { PhoneIcon, EmailIcon } from "./icons";
 
 export default function Header() {
-  let smallScreen = false;
-
-  useEffect(() => {
-    smallScreen = window.innerWidth < 1024;
-  }, []);
+  let smallScreen = window.innerWidth < 1024;
 
   return (
     <div className="relative p-3">
       <div className="flex md:flex-row md:justify-center md:space-x-14 w-full">
         <div className="w-40 md:w-72 h-14 md:h-32 relative">
-          {/* <Image
+          <img
             src={`/images/${smallScreen ? "logoWithoutSlogan.png" : "logo.png"}`}
             alt={"logo"}
-            fill
-          /> */}
+          />
         </div>
         <div className="flex flex-col w-full md:w-[28rem] md:justify-between">
           <div className="flex flex-col space-y-2 self-end md:pt-2 ">
