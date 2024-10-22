@@ -1,4 +1,4 @@
-export function resizeImage(image: HTMLImageElement, requestedSize = 140) {
+export function resizeImage(image: HTMLImageElement, requestedSize = 160) {
   const size = requestedSize + 100;
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
