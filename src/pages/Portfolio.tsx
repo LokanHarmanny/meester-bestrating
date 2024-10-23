@@ -1,15 +1,11 @@
 import { resizeImage } from "../helpers";
-import axios from "axios";
 
 export default function Portfolio() {
   // Create array of 18 elements
   // Loop through, and create a thumbnail/preview for each
   // When clicked on, takes you to seperate page that will show other photo's that belong to
   // that project
-  (async () => {
-    const response = await axios.get("./api/index.php");
-    console.log("axios response: ", response);
-  })();
+  sayHiToPhp();
 
   return (
     <>
@@ -32,4 +28,15 @@ function generatePictureArray(amount: number) {
   }
 
   return pictureArray;
+}
+
+async function sayHiToPhp() {
+  const response = await fetch("api/index.php", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  console.log("response: ", response.body);
 }
