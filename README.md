@@ -1,2 +1,2 @@
-To use locally, run `npm run build` then do a copy `sudo cp -R dist/* /var/www/html/`
-And or do api: `sudo cp public/api/index.php /var/www/html/api/`
+Use `make` to copy to local webserver dir
+Don't edit the make file in vscode as it will be a pain in the ass with spaces instead of tabs. Use vim instead.
