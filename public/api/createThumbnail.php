@@ -1,21 +1,41 @@
 <?php
+function createThumbnail($sourceImagePath, $thumbnailPath, $thumbWidth)
+{
+    list($width, $height, $type) = getimagesize($sourceImagePath);
+    $thumbHeight = floor($height * ($thumbWidth / $width));
 
-function createThumbnail($src, $dest, $desired_width) {
-    // Load the source image
-    $source_image = imagecreatefromjpeg($src);
-    $width = imagesx($source_image);
-    $height = imagesy($source_image);
+    $thumb = imagecreatetruecolor($thumbWidth, $thumbHeight);
 
-    // Calculate the desired height
-    $desired_height = floor($height * ($desired_width / $width));
+    switch ($type) {
+        case IMAGETYPE_JPEG:
+            $source = imagecreatefromjpeg($sourceImagePath);
+            break;
+        case IMAGETYPE_PNG:
+            $source = imagecreatefrompng($sourceImagePath);
+            break;
+        case IMAGETYPE_GIF:
+            $source = imagecreatefromgif($sourceImagePath);
+            break;
+        default:
+            throw new Exception("Unsupported image type");
+    }
 
-    // Create a new, virtual image
-    $virtual_image = imagecreatetruecolor($desired_width, $desired_height);
+    imagecopyresampled($thumb, $source, 0, 0, 0, 0, $thumbWidth, $thumbHeight, $width, $height);
 
-    // Copy source image to the virtual image with resizing
-    imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
+    switch ($type) {
+        case IMAGETYPE_JPEG:
+            imagejpeg($thumb, $thumbnailPath);
+            break;
+        case IMAGETYPE_PNG:
+            imagepng($thumb, $thumbnailPath);
+            break;
+        case IMAGETYPE_GIF:
+            imagegif($thumb, $thumbnailPath);
+            break;
+    }
 
-    // Save the thumbnail image to the destination
-    imagejpeg($virtual_image, $dest);
+    imagedestroy($source);
+    imagedestroy($thumb);
+
+    return $thumbnailPath;
 }
-?>
