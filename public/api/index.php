@@ -1,4 +1,7 @@
 <?php
+
+include_once("getPortfolio.php");
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 
@@ -16,27 +19,6 @@ if ($requestMethod === 'GET') {
     }
 } else {
     echo json_encode(["message" => "Request method not supported"]);
-}
-
-function getPortfolio() {
-    $directoryPath = '../images/portfolio';
-    $filesArray = getFiles($directoryPath);
-    echo json_encode($filesArray);
-}
-
-function getFiles($dir) {
-    $files = [];
-    if (is_dir($dir)) {
-        if ($dh = opendir($dir)) {
-            while (($file = readdir($dh)) !== false) {
-                if ($file != '.' && $file != '..') {
-                    $files[] = $file;
-                }
-            }
-            closedir($dh);
-        }
-    }
-    return $files;
 }
 
 ?>
