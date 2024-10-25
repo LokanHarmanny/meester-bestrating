@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { callApi, resizeImage, Status } from "../helpers"
+import { callApi, Status } from "../helpers"
 import PortfolioPicture from "./PortfolioPicture"
 
 export default function Portfolio() {
@@ -31,18 +31,4 @@ export default function Portfolio() {
 			</div>
 		</>
 	)
-}
-
-async function generatePictureArray() {
-	const files = await callApi<string[]>("getPortfolio")
-	const pictures: React.JSX.Element[] = []
-
-	for (let i = 0; i < files.length; i++) {
-		const image = new Image()
-		image.src = `./images/portfolio/${files[i]}`
-		const imageUrl = resizeImage(image).toDataURL("image/jpeg", 1.0)
-		pictures.push(<img src={imageUrl} key={`image-${i}`} />)
-	}
-
-	return pictures
 }
