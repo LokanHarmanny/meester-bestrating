@@ -11,4 +11,4 @@ copy-dist:
 	sudo cp -R dist/* /var/www/html/
 
 copy-api:
-	sudo cp public/api/index.php /var/www/html/api/
+	sudo cp -R public/api/* /var/www/html/api/
