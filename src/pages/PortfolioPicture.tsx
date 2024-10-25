@@ -6,7 +6,8 @@ export default function PortfolioPicture({ filename }: PortfolioPictureProps) {
 	return (
 		<img
 			src={filename}
-			key={`${filename.substring(filename.length - 6, filename.length - 4)}`}
+			alt={`Image ${filename}`}
+			className="absolute inset-0 w-full h-full object-cover"
 		/>
 	)
 }

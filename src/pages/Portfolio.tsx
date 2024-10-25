@@ -20,10 +20,14 @@ export default function Portfolio() {
 	return (
 		<>
 			<div>Een greep uit de eerder uitgevoerde projecten:</div>
-			<div className="flex max-w-[50vw] gap-8 flex-wrap">
+			<div className="grid grid-cols-3 gap-4">
 				{apiStatus === Status.Done ? (
-					pictures.map((picture) => {
-						return <PortfolioPicture filename={picture} />
+					pictures.map((picture, index) => {
+						return (
+							<div key={index} className="relative w-40 h-40 overflow-hidden">
+								<PortfolioPicture filename={picture} />
+							</div>
+						)
 					})
 				) : (
 					<>Laden...</>
